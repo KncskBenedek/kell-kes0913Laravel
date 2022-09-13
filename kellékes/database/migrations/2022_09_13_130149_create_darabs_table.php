@@ -14,8 +14,8 @@ class CreateDarabsTable extends Migration
     public function up()
     {
         Schema::create('darabs', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('darab');
+            $table->string('cím',40);
         });
     }
 

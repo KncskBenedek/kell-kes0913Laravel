@@ -14,8 +14,9 @@ class CreateElőadásTable extends Migration
     public function up()
     {
         Schema::create('előadás', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->date('kelt');
+            $table->time('kezdet');
+            $table->int('darab');
         });
     }
 

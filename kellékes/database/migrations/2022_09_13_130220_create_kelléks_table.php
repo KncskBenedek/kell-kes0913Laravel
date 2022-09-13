@@ -14,8 +14,9 @@ class CreateKelléksTable extends Migration
     public function up()
     {
         Schema::create('kelléks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('kellék');
+            $table->string('elnevezés',30);
+            $table->int('frissítés');
         });
     }
 
