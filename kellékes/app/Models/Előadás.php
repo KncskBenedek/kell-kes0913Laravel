@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Előadás extends Model
 {
     use HasFactory;
+    public $timeStamps = false;
 }

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Darab extends Model
 {
     use HasFactory;
+    public $timeStamps = false;
 }

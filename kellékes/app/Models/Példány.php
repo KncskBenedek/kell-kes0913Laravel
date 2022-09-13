@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Példány extends Model
 {
     use HasFactory;
+    public $timeStamps = false;
 }
