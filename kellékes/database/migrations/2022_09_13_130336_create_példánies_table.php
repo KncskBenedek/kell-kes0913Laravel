@@ -14,8 +14,9 @@ class CreatePéldániesTable extends Migration
     public function up()
     {
         Schema::create('példánies', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('kellék')->references('kellék')->on('kelléks');
+            $table->increments('sorszám');
+            $table->primary(['kellék', 'sorszám']);
         });
     }
 

@@ -16,7 +16,8 @@ class CreateElőadásTable extends Migration
         Schema::create('előadás', function (Blueprint $table) {
             $table->date('kelt');
             $table->time('kezdet');
-            $table->int('darab');
+            $table->foreignId('darab')->references('darab')->on('darabs');
+            $table->primary(['kelt', 'kezdet']);
         });
     }
 

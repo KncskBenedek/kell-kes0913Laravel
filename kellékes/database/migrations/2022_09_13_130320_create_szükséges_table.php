@@ -14,8 +14,10 @@ class CreateSzükségesTable extends Migration
     public function up()
     {
         Schema::create('szükséges', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('darab')->references('darab')->on('darabs');
+            $table->foreignId('kellék')->references('kellék')->on('kelléks');
+            $table->int('hány');
+            $table->primary(['darab','kellék']);
         });
     }
 
