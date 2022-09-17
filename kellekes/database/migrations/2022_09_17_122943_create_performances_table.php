@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateElőadásTable extends Migration
+class CreatePerformancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateElőadásTable extends Migration
      */
     public function up()
     {
-        Schema::create('előadás', function (Blueprint $table) {
-            $table->date('kelt');
-            $table->time('kezdet');
-            $table->foreignId('darab')->references('darab')->on('darabs');
-            $table->primary(['kelt', 'kezdet']);
+        Schema::create('performances', function (Blueprint $table) {
+            $table->date('dated');
+            $table->time('start');
+            $table->foreignId('piece')->references('piece')->on('pieces');
+            $table->primary(['dated', 'start']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateElőadásTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('előadás');
+        Schema::dropIfExists('performances');
     }
 }

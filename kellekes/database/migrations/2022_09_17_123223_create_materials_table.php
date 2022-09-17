@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDarabsTable extends Migration
+class CreateMaterialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateDarabsTable extends Migration
      */
     public function up()
     {
-        Schema::create('darabs', function (Blueprint $table) {
-            $table->id('darab');
-            $table->string('cím',40);
+        Schema::create('materials', function (Blueprint $table) {
+            $table->id('material');
+            $table->string('name',30);
+            $table->integer('update');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateDarabsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('darabs');
+        Schema::dropIfExists('materials');
     }
 }

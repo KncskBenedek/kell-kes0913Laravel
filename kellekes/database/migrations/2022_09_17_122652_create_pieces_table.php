@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePéldániesTable extends Migration
+class CreatePiecesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePéldániesTable extends Migration
      */
     public function up()
     {
-        Schema::create('példánies', function (Blueprint $table) {
-            $table->foreignId('kellék')->references('kellék')->on('kelléks');
-            $table->increments('sorszám');
-            $table->primary(['kellék', 'sorszám']);
+        Schema::create('pieces', function (Blueprint $table) {
+            $table->id('piece');
+            $table->string('title', 40);
         });
     }
 
@@ -27,6 +26,6 @@ class CreatePéldániesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('példánies');
+        Schema::dropIfExists('pieces');
     }
 }

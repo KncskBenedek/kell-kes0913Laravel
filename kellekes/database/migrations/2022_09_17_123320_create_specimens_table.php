@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKelléksTable extends Migration
+class CreateSpecimensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateKelléksTable extends Migration
      */
     public function up()
     {
-        Schema::create('kelléks', function (Blueprint $table) {
-            $table->id('kellék');
-            $table->string('elnevezés',30);
-            $table->int('frissítés');
+        Schema::create('specimens', function (Blueprint $table) {
+            $table->foreignId('material')->references('material')->on('materials');
+            $table->integer('ser_num');
+            $table->integer('counter');
+            $table->primary(['material', 'ser_num']);
         });
     }
 
@@ -27,6 +28,6 @@ class CreateKelléksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kelléks');
+        Schema::dropIfExists('specimens');
     }
 }

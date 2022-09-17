@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Szükséges extends Model
+class Specimen extends Model
 {
     use HasFactory;
     public $timeStamps = false;
